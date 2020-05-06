@@ -1,5 +1,11 @@
 # necromancy-deploy
 
+This repository contains a script to deploy the server on a fresh ubuntu system as well as requried configuration files.
+It will install various services that power the server (.netCore) and website (nginx, certbot).
+Lastly most common commands and usefull information are listed below.
+
+
+Server:
 https://server.wizardry-online.com
 
 IP:
