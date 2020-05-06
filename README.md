@@ -44,3 +44,23 @@ systemctl start necromancy-server
 systemctl stop necromancy-server
 systemctl restart necromancy-server
 ```
+
+SSH Key
+
+```
+ssh-keygen -t rsa -C "your_email@example.com"
+
+--two files should be generated:
+C:\Users\YOURNAME\.ssh\id_rsa     -> private key, never share with anyone!
+C:\Users\YOURNAME\.ssh\id_rsa.pub -> public key
+
+--will be created after first connection
+C:\Users\YOURNAME\.ssh\known_hosts -> includes a list of all servers you trust
+``
+
+SSH
+```
+--connect to the server
+ssh root@ssh.wizardry-online.com
+```
+
