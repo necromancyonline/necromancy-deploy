@@ -87,3 +87,28 @@ cd /var/necromancy
 --changes to home dir (~ represents home dir)
 cd ~
 ```
+
+Deploy `live` branch to server
+```
+--1) log into the server
+ssh root@ssh.wizardry-online.com
+
+--2) cd into home drive
+cd ~
+
+--3) check for 'necromancy-deploy'-folder
+ls
+
+--3.A) if 'necromancy-deploy'-folder does *not* exist, clone this repo, else continue with step 4
+git clone https://github.com/necromancyonline/necromancy-deploy.git
+
+--4) cd into 'necromancy-deploy'-folder
+cd necromancy-deploy
+
+--5) pull latest updates
+git pull
+
+--5) run deployment script (as root)
+sudo ./deploy.sh
+
+```
