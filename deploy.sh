@@ -95,7 +95,7 @@ cp -R "$work_dir/sendmail/." "$sendmail_dir"
 cp "$work_dir/opendkim/opendkim.conf" /etc/opendkim.conf
 cp "$work_dir/opendkim/opendkim" /etc/default/opendkim
 # TODO get private key
-cp "$work_dir/opendkim/wizardry-online.com.priv" /etc/opendkim
+#cp "$work_dir/opendkim/wizardry-online.com.priv" /etc/opendkim
 
 ## configure sendmail
 m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
