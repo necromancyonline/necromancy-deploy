@@ -1,0 +1,5 @@
+.DS_Store
+deploy.tar.gz
+deploy.tgz
+/tmp
+/.idea

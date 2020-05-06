@@ -1,0 +1,116 @@
+{
+  "ListenIpAddress": "0.0.0.0",
+  "LoginIpAddress": "35.241.103.147",
+  "LoginPort": 9350,
+  "GameIpAddress": "35.241.103.147",
+  "GamePort": 9360,
+  "LogLevel": 0,
+  "Version": 5,
+  "AdminOnly": false,
+  "LogUnknownIncomingPackets": false,
+  "LogOutgoingPackets": false,
+  "LogIncomingPackets": false,
+  "LogEncryptedPackets": false,
+  "EnforceEncryption": true,
+  "EnforceCrcCheck": true,
+  "CrcFileEzData": [
+    -1518645077
+  ],
+  "CrcFileExe": [
+    -176780118
+  ],
+  "CrcFileDll": [
+    -411720733
+  ],
+  "CrcMemoryDll": [
+    1630246109
+  ],
+  "CrcMemoryExe": [
+    27274492
+  ],
+  "CombineChannel": true,
+  "NeedRegistration": true,
+  "NeedCharacter": true,
+  "ChannelLoadMultiplier": 1,
+  "ServerLoadMultiplier": 1,
+  "DiscordBotToken": "",
+  "DiscordBotGuild": 468624537760694273,
+  "DiscordBotChannelGeneral": 468624537760694275,
+  "DiscordBotChannelEz2On": 482738307940483082,
+  "DiscordBotChannelError": 531441530431471678,
+  "MailFromName": "Arrowgene",
+  "MailFromAddress": "no-reply@arrowgene.net",
+  "MailGunDomain": "arrowgene.net",
+  "MailGunToken": "",
+  "DatabaseSettings": {
+    "Type": 1,
+    "SqLitePath": "db.sqlite",
+    "MariaHost": "localhost",
+    "MariaPort": 3306,
+    "MariaUser": "arrow",
+    "MariaPassword": "gene",
+    "MariaDatabase": "arrowgene"
+  },
+  "LoginSocketServerSettings": {
+    "Identity": "Login",
+    "MaxConnections": 100,
+    "NumSimultaneouslyWriteOperations": 100,
+    "BufferSize": 2000,
+    "Retries": 10,
+    "MaxUnitOfOrder": 2,
+    "SocketTimeoutSeconds": 120,
+    "SocketSettings": {
+      "Backlog": 5,
+      "DontFragment": true,
+      "DualMode": false,
+      "ExclusiveAddressUse": false,
+      "NoDelay": false,
+      "UseOnlyOverlappedIo": false,
+      "ReceiveBufferSize": 8192,
+      "ReceiveTimeout": 0,
+      "SendBufferSize": 8192,
+      "SendTimeout": 0,
+      "Ttl": 32,
+      "LingerEnabled": false,
+      "LingerTime": 30,
+      "SocketOptions": [
+        {
+          "Level": "Socket",
+          "Name": 4,
+          "Value": false
+        }
+      ]
+    }
+  },
+  "GameSocketServerSettings": {
+    "Identity": "Game",
+    "MaxConnections": 200,
+    "NumSimultaneouslyWriteOperations": 200,
+    "BufferSize": 2000,
+    "Retries": 10,
+    "MaxUnitOfOrder": 5,
+    "SocketTimeoutSeconds": 1800,
+    "SocketSettings": {
+      "Backlog": 5,
+      "DontFragment": true,
+      "DualMode": false,
+      "ExclusiveAddressUse": false,
+      "NoDelay": true,
+      "UseOnlyOverlappedIo": false,
+      "ReceiveBufferSize": 8192,
+      "ReceiveTimeout": 0,
+      "SendBufferSize": 8192,
+      "SendTimeout": 0,
+      "Ttl": 32,
+      "LingerEnabled": false,
+      "LingerTime": 30,
+      "SocketOptions": [
+        {
+          "Level": "Socket",
+          "Name": 4,
+          "Value": false
+        }
+      ]
+    }
+  }
+}
