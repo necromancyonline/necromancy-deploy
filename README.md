@@ -1,6 +1,11 @@
 # necromancy-deploy
 
-wizardry-online.com
+https://server.wizardry-online.com
+
+```
+DropletIp: 167.99.232.196
+FloatingIp: 159.203.158.107
+```
 
 ```
 DNS:
