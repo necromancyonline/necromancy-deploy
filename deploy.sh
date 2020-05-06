@@ -81,6 +81,7 @@ fi
 systemctl stop sendmail
 systemctl stop opendkim
 systemctl stop necromancy-server
+systemctl stop nginx
 
 ## ensure directories
 mkdir -p "$www_dir/html"
@@ -118,7 +119,7 @@ tmp_server_dir="$tmp_dir/server"
 git clone --single-branch -b live "$server_git" "$tmp_server_dir"
 dotnet publish "$tmp_server_dir/Necromancy.Cli/Necromancy.Cli.csproj" /p:Version=1 /p:FromMSBuild=true --runtime linux-x64 --configuration Release --output $tmp_server_dir/publish
 cp -r "$tmp_server_dir/publish/." "$server_dir/."
-cp "$work_dir/setting/server_settings.json" "$server_dir/server_settings.json"
+cp "$work_dir/setting/server_setting.json" "$server_dir/server_setting.json"
 
 echo "Creating Necromancy Server Service"
 adduser --disabled-password --gecos "" necromancy_server
