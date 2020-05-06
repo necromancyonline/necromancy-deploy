@@ -11,6 +11,7 @@ FloatingIp: 159.203.158.107
 DNS:
 Record - Host            - Value
 A      - server          - 159.65.228.70
+A      - www.server      - 159.65.228.70
 A      - ssh             - 159.203.158.107
 A      - mail            - 159.65.228.70
 TXT    - _dmarc          - v=DMARC1; p=reject; adkim=s; aspf=s; pct=100;
