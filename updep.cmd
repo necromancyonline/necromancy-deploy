@@ -4,3 +4,4 @@ if exist %ZIP% %ZIP% a -ttar -so deploy.tar .\* -x!.idea -x!.git | %ZIP% a -si .
 scp deploy.tgz root@server.wizardry-online.com:~
 REM sudo rm -rf deploy && mkdir deploy && tar -xvzf deploy.tgz -C deploy && cd ./deploy
 REM dos2unix ./deploy.sh
+REM sudo ./deploy.sh
