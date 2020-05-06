@@ -56,7 +56,7 @@ C:\Users\YOURNAME\.ssh\id_rsa.pub -> public key
 
 --will be created after first connection
 C:\Users\YOURNAME\.ssh\known_hosts -> includes a list of all servers you trust
-``
+```
 
 SSH
 ```
@@ -64,3 +64,26 @@ SSH
 ssh root@ssh.wizardry-online.com
 ```
 
+Add new key to server
+```
+--this is a list of allowed public keys to connect, add a new key to this file or remove one to manage access
+~/.ssh/authorized_keys
+```
+
+Vi Editor (https://www.cs.colostate.edu/helpdocs/vi.html)
+```
+--opens the file with vi
+vi ~/file.ext
+```
+
+Directory
+```
+--lists dirs and files
+ls
+
+--changes to dir
+cd /var/necromancy
+
+--changes to home dir (~ represents home dir)
+cd ~
+```
