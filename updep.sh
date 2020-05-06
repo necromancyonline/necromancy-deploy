@@ -16,4 +16,4 @@
 
 rm -rf deploy.tar.gz
 tar cjf deploy.tar.gz --exclude='./../necromancy-deploy/.idea' -C "./../necromancy-deploy" $(ls "./../necromancy-deploy")
-scp deploy.tar.gz root@wizardry-online.com:~
+scp deploy.tar.gz root@server.wizardry-online.com:~
