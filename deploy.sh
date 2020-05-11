@@ -89,7 +89,6 @@ systemctl stop sendmail
 systemctl stop opendkim
 systemctl stop necromancy-server
 systemctl stop nginx
-systemctl stop webhook
 
 ## ensure directories
 mkdir -p "$www_dir/html"
