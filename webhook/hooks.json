@@ -1,8 +1,8 @@
 [
   {
     "id": "webhook",
-    "execute-command": "/home/necromancy-deploy/deploy.sh",
-    "command-working-directory": "/home/necromancy-deploy",
+    "execute-command": "/root/necromancy-deploy/deploy.sh",
+    "command-working-directory": "/root/necromancy-deploy",
     "trigger-rule":
     {
       "and":
