@@ -89,6 +89,7 @@ systemctl stop sendmail
 systemctl stop opendkim
 systemctl stop necromancy-server
 systemctl stop nginx
+systemctl stop webhook
 
 ## ensure directories
 mkdir -p "$www_dir/html"
@@ -166,7 +167,7 @@ After=network.target
 User=root
 Group=root
 ExecStart=/usr/bin/webhook -hooks $webhook_dir/hooks.json -verbose
-WorkingDirectory=$server_dir
+WorkingDirectory=$webhook_dir
 Restart=on-failure
 RestartSec=600
 
@@ -190,6 +191,9 @@ systemctl restart opendkim
 
 systemctl enable necromancy-server
 systemctl restart necromancy-server
+
+systemctl enable webhook
+systemctl restart webhook
 
 #certbot certonly --standalone --email "$ssl_expire_mail" --agree-tos --no-eff-email --domain "$domain_name" --domain "www.$domain_name" --rsa-key-size 2048
 echo "run certbot manually:"
