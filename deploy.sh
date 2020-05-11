@@ -18,6 +18,7 @@ nginx_dir="/etc/nginx/"
 server_dir="/var/necromancy/server"
 www_dir="/var/www/server.wizardry-online.com"
 sendmail_dir="/etc/mail/"
+webhook_dir="/var/necromancy/webhook"
 
 work_dir="$PWD"
 tmp_dir="$work_dir/tmp"
@@ -30,6 +31,12 @@ fi
 ## Install
 # If packet resolution doesn't work due to ipv6
 # echo 'Acquire::ForceIPv4 "true";' | tee /etc/apt/apt.conf.d/99force-ipv4
+
+
+if ! which webhook > /dev/null 2>&1; then    
+echo "Installing webhook"
+    apt-get install -y webhook
+fi
 
 if ! which certbot > /dev/null 2>&1; then
     echo "Installing lets encrypt certbot"
@@ -88,6 +95,7 @@ mkdir -p "$www_dir/html"
 mkdir -p "$www_dir/log"
 mkdir -p "$server_dir"
 mkdir -p /etc/opendkim
+mkdir -p "$webhook_dir"
 
 ## copy files
 cp -R "$work_dir/html/." "$www_dir/html"
@@ -143,6 +151,29 @@ RestartSec=600
 [Install]
 WantedBy=multi-user.target
 EOF
+
+
+##setup webhook
+cp "$work_dir/webhook/hooks.json" "$webhook_dir/hooks.json"
+
+chown -R root:root "$webhook_dir"
+rm /lib/systemd/system/webhook.service
+cat << EOF >> /lib/systemd/system/webhook.service
+[Unit]
+After=network.target
+
+[Service]
+User=root
+Group=root
+ExecStart=/usr/bin/webhook -hooks $webhook_dir/hooks.json -verbose
+WorkingDirectory=$server_dir
+Restart=on-failure
+RestartSec=600
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
 
 ## update services
 echo "Enabeling services"
