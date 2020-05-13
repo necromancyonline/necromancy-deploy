@@ -142,7 +142,8 @@ Environment="DB_TYPE=sqlite"
 Environment="DB_USER="
 Environment="DB_PASS="
 Type=simple
-User=necromancy_server
+User=root
+Group=root
 ExecStart=$server_dir/Necromancy.Cli server start --service --max-packet-size=64 --b-list=3:0x2E64,0xFFFC,0xFFFD,0xFFFE,0xFFFF,3:0x6A72,3:0xE4AE,3:0x8D92,3:0x6B6A,0x8BB4,0x2470
 WorkingDirectory=$server_dir
 Restart=on-failure
