@@ -29,6 +29,7 @@
     "BufferSize": 2000,
     "Retries": 10,
     "MaxUnitOfOrder": 2,
+    "MaxSimultaneousSendsPerClient": 1,
     "SocketTimeoutSeconds": -1,
     "SocketSettings": {
       "Backlog": 5,
@@ -60,6 +61,7 @@
     "BufferSize": 2000,
     "Retries": 10,
     "MaxUnitOfOrder": 2,
+    "MaxSimultaneousSendsPerClient": 1,
     "SocketTimeoutSeconds": -1,
     "SocketSettings": {
       "Backlog": 5,
@@ -91,6 +93,7 @@
     "BufferSize": 2000,
     "Retries": 10,
     "MaxUnitOfOrder": 2,
+    "MaxSimultaneousSendsPerClient": 1,
     "SocketTimeoutSeconds": -1,
     "SocketSettings": {
       "Backlog": 5,
