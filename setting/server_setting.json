@@ -12,6 +12,9 @@
   "LogUnknownIncomingPackets": true,
   "LogOutgoingPackets": true,
   "LogIncomingPackets": true,
+  "DiscordBotToken": "",
+  "DiscordGuild": 541789394873352203,
+  "DiscordBotChannel_ServerStatus": 710367511824171019,
   "RepositoryFolder": "Client/Data/Settings",
   "DatabaseSettings": {
     "Type": 0,
