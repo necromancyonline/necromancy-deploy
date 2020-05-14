@@ -124,11 +124,9 @@ rm -rf "$tmp_dir"
 ## setup necromancy server
 echo "Installing Necromancy Server"
 
-## delete existing DB
-## rm -rf $server_dir/Database
-
 ## delete all server files
-rm -rf $server_dir
+rm -rf $server_dir/
+mkdir -p "$server_dir"
 
 tmp_server_dir="$tmp_dir/server"
 git clone --single-branch -b live "$server_git" "$tmp_server_dir"
