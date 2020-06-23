@@ -24,7 +24,8 @@
     "Port": 3306,
     "User": "",
     "Password": "",
-    "Database": "necromancy"
+    "Database": "necromancy",
+    "ScriptFolder": "Database/Script"
   },
   "AuthSocketSettings": {
     "Identity": "",
