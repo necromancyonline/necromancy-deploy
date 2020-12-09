@@ -139,7 +139,7 @@ tmp_web_dir="$tmp_dir/web"
 git clone --single-branch -b live "$web_git" "$tmp_web_dir"
 sudo npm --prefix "$tmp_web_dir" install "$tmp_web_dir"
 sudo npm --prefix "$tmp_web_dir" run build
-#cp -R "$tmp_web_dir/dist/arrowgene-web/." "$www_dir/html"
+cp -R "$tmp_web_dir/build/." "$www_dir/html"
 
 
 ## setup necromancy server
