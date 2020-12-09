@@ -110,7 +110,7 @@ mkdir -p /etc/opendkim
 mkdir -p "$webhook_dir"
 
 ## copy files
-cp -R "$work_dir/html/." "$www_dir/html"
+#cp -R "$work_dir/html/." "$www_dir/html"
 cp -R "$work_dir/nginx/." "$nginx_dir"
 cp -R "$work_dir/sendmail/." "$sendmail_dir"
 cp "$work_dir/opendkim/opendkim.conf" /etc/opendkim.conf
@@ -138,7 +138,7 @@ echo "Installing Necromancy Web"
 tmp_web_dir="$tmp_dir/web"
 git clone --single-branch -b live "$web_git" "$tmp_web_dir"
 sudo npm --prefix "$tmp_web_dir" install "$tmp_web_dir"
-sudo npm --prefix "$tmp_web_dir" run prod
+sudo npm --prefix "$tmp_web_dir" run build
 #cp -R "$tmp_web_dir/dist/arrowgene-web/." "$www_dir/html"
 
 
