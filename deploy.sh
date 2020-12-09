@@ -10,14 +10,14 @@
 server_git="https://github.com/necromancyonline/necromancy-server.git"
 web_git="https://github.com/necromancyonline/necromancy-web.git"
 
-domain_name="server.wizardry-online.com"
+domain_name="wizardry-online.com"
 ssl_expire_mail="sebastian.heinz.gt@googlemail.com"
 php_version="php7.2"
 
 php_dir="/etc/php/"
 nginx_dir="/etc/nginx/"
 server_dir="/var/necromancy/server"
-www_dir="/var/www/server.wizardry-online.com"
+www_dir="/var/www/wizardry-online.com"
 sendmail_dir="/etc/mail/"
 webhook_dir="/var/necromancy/webhook"
 
@@ -116,7 +116,7 @@ cp -R "$work_dir/sendmail/." "$sendmail_dir"
 cp "$work_dir/opendkim/opendkim.conf" /etc/opendkim.conf
 cp "$work_dir/opendkim/opendkim" /etc/default/opendkim
 # TODO get private key
-#cp "$work_dir/opendkim/server.wizardry-online.com.priv" /etc/opendkim
+#cp "$work_dir/opendkim/wizardry-online.com.priv" /etc/opendkim
 
 ## configure sendmail
 m4 /etc/mail/sendmail.mc > /etc/mail/sendmail.cf
@@ -124,7 +124,7 @@ m4 /etc/mail/submit.mc > /etc/mail/submit.cf
 
 ## configure opendkim
 chown -R opendkim:opendkim "/etc/opendkim"
-chmod -R 700 /etc/opendkim/server.wizardry-online.com.priv
+chmod -R 700 /etc/opendkim/wizardry-online.com.priv
 
 ## configure nginx
 ln -s "$nginx_dir"sites-available/"$domain_name" "$nginx_dir"sites-enabled/

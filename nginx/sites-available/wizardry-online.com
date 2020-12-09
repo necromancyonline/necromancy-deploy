@@ -1,30 +1,30 @@
 server {
   listen 80;
-  server_name server.wizardry-online.com www.server.wizardry-online.com;
-  return 301 https://server.wizardry-online.com$request_uri;
+  server_name wizardry-online.com www.wizardry-online.com;
+  return 301 https://wizardry-online.com$request_uri;
 }
 
 server {
   listen 443 ssl;
-  server_name www.server.wizardry-online.com;
+  server_name www.wizardry-online.com;
 
-  ssl_certificate /etc/letsencrypt/live/server.wizardry-online.com/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/server.wizardry-online.com/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/wizardry-online.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/wizardry-online.com/privkey.pem;
 
-  return 301 https://server.wizardry-online.com$request_uri;
+  return 301 https://wizardry-online.com$request_uri;
 }
 
 server {
   listen 443 ssl;
-  server_name server.wizardry-online.com;
-  root /var/www/server.wizardry-online.com/html;
+  server_name wizardry-online.com;
+  root /var/www/wizardry-online.com/html;
   index index.html;
 
-  access_log /var/www/server.wizardry-online.com/log/access.log;
-  error_log /var/www/server.wizardry-online.com/log/error.log;
+  access_log /var/www/wizardry-online.com/log/access.log;
+  error_log /var/www/wizardry-online.com/log/error.log;
 
-  ssl_certificate /etc/letsencrypt/live/server.wizardry-online.com/fullchain.pem;
-  ssl_certificate_key /etc/letsencrypt/live/server.wizardry-online.com/privkey.pem;
+  ssl_certificate /etc/letsencrypt/live/wizardry-online.com/fullchain.pem;
+  ssl_certificate_key /etc/letsencrypt/live/wizardry-online.com/privkey.pem;
   ssl_session_cache shared:SSL:1m;
   ssl_session_timeout 5m;
   ssl_ciphers HIGH:!aNULL:!MD5;
