@@ -8,7 +8,6 @@
 # Description: The following script deploys the complete stack to a fresh ubuntu installation.
 
 server_git="https://github.com/necromancyonline/necromancy-server.git"
-web_git="https://github.com/necromancyonline/necromancy-web.git"
 
 domain_name="server.wizardry-online.com"
 ssl_expire_mail="sebastian.heinz.gt@googlemail.com"
@@ -86,17 +85,6 @@ if ! which dotnet > /dev/null 2>&1; then
     apt-get install -y dotnet-sdk-3.1
 fi
 
-if ! which node > /dev/null 2>&1; then
-## https://github.com/nodesource/distributions/blob/master/README.md#debinstall
-    echo "Installing node"
-    curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-    ## curl -sL https://deb.nodesource.com/setup_8.x | bash -
-    apt-get update
-    apt-get install -y nodejs
-    apt-get install -y build-essential
-fi
-
-
 systemctl stop sendmail
 systemctl stop opendkim
 systemctl stop necromancy-server
@@ -132,15 +120,6 @@ ln -s "$nginx_dir"sites-available/"$domain_name" "$nginx_dir"sites-enabled/
 ## delete temp files
 echo "Cleaning /tmp Files"
 rm -rf "$tmp_dir"
-
-
-echo "Installing Necromancy Web"
-tmp_web_dir="$tmp_dir/web"
-git clone --single-branch -b live "$web_git" "$tmp_web_dir"
-sudo npm --prefix "$tmp_web_dir" install "$tmp_web_dir"
-sudo npm --prefix "$tmp_web_dir" run prod
-#cp -R "$tmp_web_dir/dist/arrowgene-web/." "$www_dir/html"
-
 
 ## setup necromancy server
 echo "Installing Necromancy Server"
