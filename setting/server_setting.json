@@ -21,6 +21,8 @@
   "PoolNpcIdSize": 100000000,
   "PoolMonsterIdLowerBound": 600000000,
   "PoolMonsterIdSize": 100000000,
+  "PoolDeadBodyIdLowerBound": 800000000,
+  "PoolDeadBodyIdSize": 100000000,
   "PoolDynamicIdLowerBound": 1,
   "PoolDynamicIdSize": 1000000,
   "RepositoryFolder": "Client/Data/Settings",
