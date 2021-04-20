@@ -14,7 +14,7 @@
   "logIncomingPackets": true,
   "discordBotToken": "",
   "discordGuild": 541789394873352203,
-  "discordBotChannel_ServerStatus": 710367511824171019,
+  "discordBotChannelServerStatus": 710367511824171019,
   "poolCharacterIdLowerBound": 200000000,
   "poolCharacterIdSize": 100000000,
   "poolNpcLowerBound": 400000000,
